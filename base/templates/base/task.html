@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Welcome to your task manager!</h1>
+<div>
+<h1>Task: {{task}}</h1>
+<p>Title: {{task.title}}</p>
+<p>Description: <em>{{task.description}}</em></p>
+<p>Created on: {{task.created}}</p>
+<p>Last updated: {{task.updated}}</p>
+
+{% if task.complete %}
+    <p>This task is completed.</p>
+{% else %}
+    <p>This task is not completed.</p>
+{% endif %}
+
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}!</p>
+{% else %}
+    <p>You are not logged in.</p>
+{% endif %}
+
+
+{% if user.is_authenticated %}
+    <a href="{% url 'task-update' task.id %}">Edit</a>
+    <a href="{% url 'task-delete' task.id %}">Delete</a>
+{% else %}
+    <p>You need to be logged in to edit or delete tasks.</p>
+{% endif %} 
+
+</div>
+
+</div>
+{% endblock %}

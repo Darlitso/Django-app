@@ -1,0 +1,88 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta charset="utf-8"> -->
+        <meta http-equiv="X-UA-Compatible" content ="IE=edge">
+        <title>To Do List</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial scale=1"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/delete_modal.css' %}">
+        <link rel="stylesheet" href="{% static 'css/edit_modal.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <script src="{% static 'js/delete_modal.js' %}"></script>
+        <script src="{% static 'js/edit_modal.js' %}"></script> 
+
+        <style>
+            body {
+                background-color: #1c1c1c;
+                font-family: 'Segoe UI', sans-serif;
+                padding-top: 50px;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 
+             {
+                font-family: Raleway, sans-serif;
+            }
+            a, 
+            p {
+                color:#2e2b2b;
+            }
+            .container {
+                width: 750px;
+                margin: auto;
+                background-color: rgb(98, 90, 90);
+                -web-kit-shadow: 2px 2px 13px -4px black;
+                box-shadow: 2px 2px 13px -4px black;
+                padding: 20px;
+                border-radius: 20px;
+            }
+            .header-bar {
+                display: flex;
+                justify-content: space-between;
+                color:aliceblue;
+                padding: 10px;
+                border-radius: 5px 5px 0 0;
+                background: linear-gradient(90deg, #111 0%, #112 43%, #223 100%);
+
+                a,
+                p{
+                    color:aliceblue
+                }
+            }
+
+            .search-area{
+                display: flex;
+                justify-content: space-between;
+                margin: 20px 0;
+                padding: 10px;
+                background-color: #282727;
+                border-radius: 5px;
+            }
+           
+        </style>
+
+    </head>
+  
+
+<body>
+
+       <div class="container">
+        {% block content %}
+
+
+        {% endblock content %}
+       </div>
+    </body>
+</html>
